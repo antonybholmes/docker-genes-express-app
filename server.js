@@ -98,7 +98,7 @@ app.get("/search", (req, res) => {
         assembly: assembly,
         track: track,
         version: version,
-        data: rows.map((row) => JSON.parse(row.json)),
+        genes: rows.map((row) => JSON.parse(row.json)),
       })
     })
   })
