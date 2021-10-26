@@ -1,17 +1,35 @@
 {
   "name": "genes-express",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "dist/server.js",
   "author": "Antony Holmes",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "lodash": "^4.17.21",
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "prebuild": "eslint --config .eslintrc.js --ext .ts src/",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "PORT=8080 nodemon .",
+    "predev": "npm run build",
+    "dev": "PORT=8000 nodemon ."
   },
-  "type": "module"
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/lodash": "^4.14.176",
+    "@types/node": "^16.11.6",
+    "@types/sqlite3": "^3.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
 }
