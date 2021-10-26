@@ -2,3 +2,4 @@ node_modules
 genedb.sqlite3
 yarn*
 .Rhistory
+package-lock.json
