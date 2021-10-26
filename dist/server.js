@@ -40,7 +40,7 @@ app.listen(HTTP_PORT, function () {
 app.get("/", function (req, res) {
     res.json({ message: "Ok" });
 });
-app.get("/search", function (req, res) {
+app.get("/api/v1/search", function (req, res) {
     if (!("genome" in req.query)) {
         req.query.genome = "Human";
     }

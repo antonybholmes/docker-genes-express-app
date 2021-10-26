@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Ok" })
 })
 
-app.get("/search", (req, res) => {
+app.get("/api/v1/search", (req, res) => {
   if (!("genome" in req.query)) {
     req.query.genome = "Human"
   }
